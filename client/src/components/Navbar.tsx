@@ -13,6 +13,12 @@ export default function Navbar() {
     setMobileMenuOpen(false);
   };
 
+  const scrollToAbout = () => {
+    const aboutSection = document.getElementById('about');
+    aboutSection?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    setMobileMenuOpen(false);
+  };
+
   return (
     <header className="fixed top-0 left-0 right-0 z-50">
       <nav className="backdrop-blur-sm bg-background/40 px-4 py-3 shadow-sm border-b border-border/50">
@@ -34,9 +40,9 @@ export default function Navbar() {
             <button onClick={scrollToShop} className="hover-elevate px-3 py-2 rounded-md" data-testid="link-shop">
               Shop
             </button>
-            <a href="#about" className="hover-elevate px-3 py-2 rounded-md" data-testid="link-about">
+            <button onClick={scrollToAbout} className="hover-elevate px-3 py-2 rounded-md" data-testid="link-about">
               About
-            </a>
+            </button>
             <a href="#contact" className="hover-elevate px-3 py-2 rounded-md" data-testid="link-contact">
               Contact
             </a>
@@ -69,14 +75,13 @@ export default function Navbar() {
               >
                 Shop
               </button>
-              <a
-                href="#about"
-                onClick={() => setMobileMenuOpen(false)}
+              <button
+                onClick={scrollToAbout}
                 className="text-left px-3 py-2 rounded hover-elevate"
                 data-testid="link-mobile-about"
               >
                 About
-              </a>
+              </button>
               <a
                 href="#contact"
                 onClick={() => setMobileMenuOpen(false)}

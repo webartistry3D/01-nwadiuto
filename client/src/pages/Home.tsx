@@ -5,6 +5,7 @@ import Hero from '@/components/Hero';
 import Categories from '@/components/Categories';
 import ProductGrid from '@/components/ProductGrid';
 import WhyShop from '@/components/WhyShop';
+import AboutUs from '@/components/AboutUs';
 import Testimonials from '@/components/Testimonials';
 import FinalCTA from '@/components/FinalCTA';
 import Footer from '@/components/Footer';
@@ -59,6 +60,7 @@ export default function Home() {
         </section>
 
         <WhyShop />
+        <AboutUs />
         <Testimonials />
         <FinalCTA />
       </main>
