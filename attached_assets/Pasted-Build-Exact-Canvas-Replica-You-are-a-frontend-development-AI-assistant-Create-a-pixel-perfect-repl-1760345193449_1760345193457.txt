@@ -1,0 +1,143 @@
+Build Exact Canvas Replica
+
+You are a frontend development AI assistant. Create a pixel-perfect replica of the page shown in this Canvas:
+https://chatgpt.com/canvas/shared/68eb9888ade081919f5009aa5d052769.
+
+Follow these rules strictly:
+
+
+---
+
+1. Tech Stack
+
+React (functional components, hooks)
+
+Vite build system
+
+Tailwind CSS (v4, with PostCSS config via @tailwindcss/postcss)
+
+Framer Motion for animations
+
+Use ES Modules (modern syntax)
+
+
+
+---
+
+2. Fonts & Theme
+
+Import Playfair Display for headings
+
+Import Inter (or a clean sans serif) for body text
+
+Use the exact pink/rose tones from the Canvas
+
+Set background and card colors exactly as in the design
+
+Use Tailwind's theme.extend to add custom colors and fonts matching the Canvas
+
+
+
+---
+
+3. Layout & Components
+
+Recreate exactly the page layout, including:
+
+Navbar (transparent / backdrop blur background, brand name, menu links)
+
+Hero section (full-width image background, dark overlay, centered title & subtitle, “Shop the Collection” button)
+
+Category filter bar (rounded pills, horizontal scroll on mobile)
+
+Product grid (responsive columns, same spacing & aspect ratio)
+
+Product cards (image, stock label overlay, name, price, color dots/text, sizes, “Order on WhatsApp” button)
+
+Testimonials / feature sections as in the Canvas
+
+Footer (centered text)
+
+Floating WhatsApp button with small bounce animation
+
+Smooth scroll behavior when clicking buttons
+
+
+
+---
+
+4. Interactions & Animations
+
+Fade-in / slide-up animations for headings & product cards using Framer Motion
+
+Button hover scale effect
+
+Scroll behavior: smooth
+
+Mobile menu open/close (if menu behavior exists in Canvas)
+
+Floating button should loop bounce
+
+
+
+---
+
+5. Responsiveness
+
+The page must look identical on mobile and desktop as the Canvas shows
+
+Use Tailwind breakpoints (sm, md, lg, etc) to match layout changes
+
+Image cropping / aspect ratio should be preserved
+
+
+
+---
+
+6. Data & Logic
+
+Use a products array in a data file, matching sample images and names from your current set
+
+Filtering logic via useState / useMemo (no context or complex structures)
+
+WhatsApp button should open https://wa.me/ links with message encoding
+
+Default filter = “All”
+
+
+
+---
+
+7. Folder & File Structure
+
+Use a clean structure like:
+
+src/
+ ├── components/
+ │    Navbar.jsx
+ │    Hero.jsx
+ │    Categories.jsx
+ │    ProductCard.jsx
+ │    ProductGrid.jsx
+ │    Testimonials.jsx
+ │    Footer.jsx
+ ├── data/
+ │    products.js
+ ├── App.jsx
+ ├── main.jsx
+ └── index.css
+
+
+---
+
+10. Final Deliverable
+
+Provide complete source files (JSX, CSS, config) that, when run with npm install && npm run dev, produce a page indistinguishable from the Canvas link.
+
+
+---
+
+**Start now and build the full React + Tailwind + Framer Motion project that matches the design exactly.**
+
+
+
