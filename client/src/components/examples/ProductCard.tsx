@@ -1,16 +1,16 @@
 import ProductCard from '../ProductCard';
-import lipstick1 from '@assets/stock_images/pink_lipstick_beauty_f9a0f605.jpg';
 
 export default function ProductCardExample() {
   const product = {
     id: '1',
-    name: 'Rose Velvet Lipstick',
-    price: 8500,
-    image: lipstick1,
-    category: 'Lipsticks',
+    name: 'Silk Bodycon Dress',
+    price: 32000,
+    image: 'https://images.unsplash.com/photo-1520975910581-3c8f1b5d0f7a?auto=format&fit=crop&w=800&q=60',
+    category: 'Party',
     stock: 'in-stock' as const,
-    colors: ['#FF69B4', '#DC143C', '#C71585'],
-    sizes: ['3.5g', '5g'],
+    stockCount: '5',
+    colors: ['Black', 'Champagne'],
+    sizes: ['S', 'M', 'L'],
   };
 
   return (

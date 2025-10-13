@@ -5,30 +5,33 @@ interface CategoriesProps {
   onSelectCategory: (category: string) => void;
 }
 
-const categories = ['All', 'Lipsticks', 'Eyeshadows', 'Blush', 'Foundation', 'Highlighters'];
+const categories = ['All', 'Party', 'Workwear', 'Casual', 'Native', 'Bridal', 'Luxury', 'Accessories'];
 
 export default function Categories({ selectedCategory, onSelectCategory }: CategoriesProps) {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
+      initial={{ opacity: 0, y: 10 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6 }}
-      className="flex gap-3 overflow-x-auto pb-4 scrollbar-hide snap-x snap-mandatory"
+      transition={{ delay: 0.1 }}
+      className="max-w-3xl mx-auto"
     >
-      {categories.map((category) => (
-        <button
-          key={category}
-          onClick={() => onSelectCategory(category)}
-          className={`flex-shrink-0 px-6 py-2 rounded-full font-medium transition-all snap-start ${
-            selectedCategory === category
-              ? 'bg-primary text-primary-foreground'
-              : 'bg-background border-2 border-border hover-elevate'
-          }`}
-          data-testid={`button-category-${category.toLowerCase()}`}
-        >
-          {category}
-        </button>
-      ))}
+      <div className="flex gap-3 overflow-x-auto pb-2 scrollbar-hide">
+        {categories.map((category) => (
+          <button
+            key={category}
+            onClick={() => onSelectCategory(category)}
+            aria-pressed={selectedCategory === category}
+            className={`whitespace-nowrap px-4 py-2 rounded-full text-sm transition-all ${
+              selectedCategory === category
+                ? 'bg-primary/20 text-primary border-2 border-primary/30'
+                : 'bg-background border-2 border-border text-foreground shadow-sm hover-elevate'
+            }`}
+            data-testid={`button-category-${category.toLowerCase()}`}
+          >
+            {category}
+          </button>
+        ))}
+      </div>
     </motion.div>
   );
 }

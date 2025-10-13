@@ -1,59 +1,42 @@
 import { motion } from 'framer-motion';
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 
-interface Testimonial {
-  id: string;
-  name: string;
-  image: string;
-  text: string;
-  initials: string;
-}
+const testimonials = [
+  {
+    id: '1',
+    text: 'Absolutely in love with my dress! Fits perfectly.',
+    author: '@beauty_by_toke',
+  },
+  {
+    id: '2',
+    text: 'Quick delivery and excellent quality. Will buy again.',
+    author: '@chicamaka',
+  },
+];
 
-interface TestimonialsProps {
-  testimonials: Testimonial[];
-}
-
-export default function Testimonials({ testimonials }: TestimonialsProps) {
+export default function Testimonials() {
   return (
-    <section id="testimonials" className="py-16 md:py-24">
-      <div className="max-w-7xl mx-auto px-4 md:px-6">
-        <motion.h2
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="font-serif text-3xl md:text-4xl font-bold text-center mb-12"
+    <section className="mt-8 px-4">
+      <div className="max-w-3xl mx-auto">
+        <motion.h3
+          initial={{ opacity: 0, y: 8 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="font-serif text-lg mb-4"
           data-testid="text-testimonials-heading"
         >
-          What Our Customers Say
-        </motion.h2>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          What Customers Say
+        </motion.h3>
+        <div className="space-y-3">
           {testimonials.map((testimonial, index) => (
             <motion.div
               key={testimonial.id}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="bg-card border border-card-border rounded-2xl p-6"
+              initial={{ opacity: 0, x: -10 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: index * 0.1 }}
+              className="bg-card border border-card-border rounded-lg p-3 shadow-sm"
               data-testid={`card-testimonial-${testimonial.id}`}
             >
-              <div className="flex items-center gap-4 mb-4">
-                <Avatar className="w-16 h-16">
-                  <AvatarImage src={testimonial.image} alt={testimonial.name} />
-                  <AvatarFallback>{testimonial.initials}</AvatarFallback>
-                </Avatar>
-                <div>
-                  <h3 className="font-semibold" data-testid={`text-testimonial-name-${testimonial.id}`}>
-                    {testimonial.name}
-                  </h3>
-                  <p className="text-sm text-muted-foreground">Verified Customer</p>
-                </div>
-              </div>
-              <p className="text-muted-foreground" data-testid={`text-testimonial-content-${testimonial.id}`}>
-                "{testimonial.text}"
-              </p>
+              <div className="text-sm font-medium">"{testimonial.text}"</div>
+              <div className="text-xs text-muted-foreground mt-2">— {testimonial.author}</div>
             </motion.div>
           ))}
         </div>

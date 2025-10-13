@@ -1,84 +1,103 @@
-import { useState, useEffect } from 'react';
-import { Menu, X } from 'lucide-react';
-import { Button } from '@/components/ui/button';
+import { useState } from 'react';
+import { Menu } from 'lucide-react';
+import { motion } from 'framer-motion';
+
+const whatsappNumber = '2347012345678';
 
 export default function Navbar() {
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  const menuItems = [
-    { label: 'Home', href: '#home' },
-    { label: 'Products', href: '#products' },
-    { label: 'Testimonials', href: '#testimonials' },
-    { label: 'Contact', href: '#contact' },
-  ];
+  const scrollToShop = () => {
+    const shopSection = document.getElementById('shop');
+    shopSection?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    setMobileMenuOpen(false);
+  };
 
   return (
-    <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
-          ? 'bg-background/80 backdrop-blur-md shadow-sm'
-          : 'bg-transparent'
-      }`}
-    >
-      <div className="max-w-7xl mx-auto px-4 md:px-6">
-        <div className="flex items-center justify-between h-16 md:h-20">
-          <a
-            href="#home"
-            className="font-serif text-2xl md:text-3xl font-bold text-primary"
-            data-testid="link-brand"
-          >
-            Glam By Amaka
-          </a>
+    <header className="fixed top-0 left-0 right-0 z-50">
+      <nav className="backdrop-blur-sm bg-background/40 px-4 py-3 shadow-sm border-b border-border/50">
+        <div className="max-w-3xl mx-auto flex items-center justify-between">
+          <div className="flex items-center gap-3">
+            <button
+              aria-label="Open menu"
+              className="md:hidden p-2 rounded-full hover-elevate"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              data-testid="button-mobile-menu"
+            >
+              <Menu className="w-5 h-5" />
+            </button>
 
-          <div className="hidden md:flex items-center gap-8">
-            {menuItems.map((item) => (
-              <a
-                key={item.label}
-                href={item.href}
-                className="text-sm font-medium hover-elevate px-3 py-2 rounded-md transition-colors"
-                data-testid={`link-${item.label.toLowerCase()}`}
-              >
-                {item.label}
-              </a>
-            ))}
+            <div className="text-lg font-serif tracking-wider">Glam by Amaka</div>
           </div>
 
-          <Button
-            size="icon"
-            variant="ghost"
-            className="md:hidden"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            data-testid="button-mobile-menu"
-          >
-            {isMobileMenuOpen ? <X /> : <Menu />}
-          </Button>
+          <div className="hidden md:flex gap-6 text-sm items-center">
+            <button onClick={scrollToShop} className="hover-elevate px-3 py-2 rounded-md" data-testid="link-shop">
+              Shop
+            </button>
+            <a href="#about" className="hover-elevate px-3 py-2 rounded-md" data-testid="link-about">
+              About
+            </a>
+            <a href="#contact" className="hover-elevate px-3 py-2 rounded-md" data-testid="link-contact">
+              Contact
+            </a>
+          </div>
+
+          <div className="hidden md:flex">
+            <a
+              href={`https://wa.me/${whatsappNumber}?text=${encodeURIComponent("Hi Amaka, I'd like to shop your collection.")}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block px-3 py-2 rounded-full bg-primary/10 text-primary text-sm border border-primary/20"
+              data-testid="link-whatsapp-nav"
+            >
+              Chat on WhatsApp
+            </a>
+          </div>
         </div>
 
-        {isMobileMenuOpen && (
-          <div className="md:hidden pb-4">
-            {menuItems.map((item) => (
-              <a
-                key={item.label}
-                href={item.href}
-                className="block px-4 py-3 text-sm font-medium hover-elevate rounded-md"
-                onClick={() => setIsMobileMenuOpen(false)}
-                data-testid={`link-mobile-${item.label.toLowerCase()}`}
+        {mobileMenuOpen && (
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: 'auto', opacity: 1 }}
+            className="md:hidden mt-3 px-2 pb-3"
+          >
+            <div className="flex flex-col gap-2">
+              <button
+                onClick={scrollToShop}
+                className="text-left px-3 py-2 rounded hover-elevate"
+                data-testid="link-mobile-shop"
               >
-                {item.label}
+                Shop
+              </button>
+              <a
+                href="#about"
+                onClick={() => setMobileMenuOpen(false)}
+                className="text-left px-3 py-2 rounded hover-elevate"
+                data-testid="link-mobile-about"
+              >
+                About
               </a>
-            ))}
-          </div>
+              <a
+                href="#contact"
+                onClick={() => setMobileMenuOpen(false)}
+                className="text-left px-3 py-2 rounded hover-elevate"
+                data-testid="link-mobile-contact"
+              >
+                Contact
+              </a>
+              <a
+                href={`https://wa.me/${whatsappNumber}?text=${encodeURIComponent("Hi Amaka, I'd like to shop your collection.")}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-2 inline-block px-3 py-2 rounded-full bg-primary/10 text-primary text-sm border border-primary/20"
+                data-testid="link-mobile-whatsapp"
+              >
+                Chat on WhatsApp
+              </a>
+            </div>
+          </motion.div>
         )}
-      </div>
-    </nav>
+      </nav>
+    </header>
   );
 }

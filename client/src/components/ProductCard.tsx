@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
-import { Badge } from '@/components/ui/badge';
+import { Heart } from 'lucide-react';
+import { useState } from 'react';
 
 export interface Product {
   id: string;
@@ -9,8 +10,9 @@ export interface Product {
   image: string;
   category: string;
   stock: 'in-stock' | 'low-stock' | 'out-of-stock';
-  colors?: string[];
-  sizes?: string[];
+  stockCount: string;
+  colors: string[];
+  sizes: string[];
 }
 
 interface ProductCardProps {
@@ -18,96 +20,89 @@ interface ProductCardProps {
   index: number;
 }
 
+const whatsappNumber = '2347012345678';
+
 export default function ProductCard({ product, index }: ProductCardProps) {
-  const getStockBadge = () => {
-    const variants = {
-      'in-stock': { label: 'In Stock', className: 'bg-green-600 text-white' },
-      'low-stock': { label: 'Low Stock', className: 'bg-amber-600 text-white' },
-      'out-of-stock': { label: 'Out of Stock', className: 'bg-gray-500 text-white' },
-    };
-    return variants[product.stock];
-  };
+  const [isSaved, setIsSaved] = useState(false);
 
   const handleWhatsAppOrder = () => {
-    const message = `Hi! I'd like to order ${product.name} (₦${product.price.toLocaleString()})`;
-    const whatsappUrl = `https://wa.me/?text=${encodeURIComponent(message)}`;
+    const sizePart = product.sizes.length > 0 ? ` Size: ${product.sizes[0]}` : '';
+    const message = `Hi Amaka, I'm interested in the ${product.name} (Price: ₦${product.price.toLocaleString()})${sizePart}. Do you have it available?`;
+    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
   };
 
-  const stockBadge = getStockBadge();
+  const handleSave = () => {
+    setIsSaved(!isSaved);
+    console.log(isSaved ? 'Removed from wishlist' : 'Saved to wishlist');
+  };
 
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
+    <motion.article
+      initial={{ opacity: 0, y: 12 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6, delay: index * 0.1 }}
-      className="group"
+      transition={{ delay: index * 0.04 }}
+      className="bg-white rounded-lg overflow-hidden shadow-sm"
     >
-      <div className="relative aspect-[3/4] overflow-hidden rounded-lg bg-muted mb-4">
+      <div className="relative">
         <img
           src={product.image}
           alt={product.name}
-          className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+          className="w-full h-44 object-cover"
           data-testid={`img-product-${product.id}`}
         />
-        <Badge
-          className={`absolute top-2 right-2 ${stockBadge.className}`}
+        <div
+          className="absolute top-2 left-2 bg-black/65 text-white text-xs px-2 py-1 rounded"
           data-testid={`badge-stock-${product.id}`}
         >
-          {stockBadge.label}
-        </Badge>
+          {product.stockCount === 'Limited' ? 'Limited' : `In stock: ${product.stockCount}`}
+        </div>
       </div>
 
-      <h3
-        className="text-lg font-medium mb-2"
-        data-testid={`text-product-name-${product.id}`}
-      >
-        {product.name}
-      </h3>
+      <div className="p-3">
+        <h3
+          className="font-serif text-sm leading-snug"
+          data-testid={`text-product-name-${product.id}`}
+        >
+          {product.name}
+        </h3>
 
-      <p
-        className="text-xl font-semibold text-primary mb-3"
-        data-testid={`text-product-price-${product.id}`}
-      >
-        ₦{product.price.toLocaleString()}
-      </p>
-
-      {product.colors && product.colors.length > 0 && (
-        <div className="flex gap-2 mb-3">
-          {product.colors.map((color, idx) => (
-            <div
-              key={idx}
-              className="w-6 h-6 rounded-full border-2 border-border"
-              style={{ backgroundColor: color }}
-              data-testid={`color-${product.id}-${idx}`}
-            />
-          ))}
+        <div className="mt-1 flex items-center justify-between">
+          <div
+            className="text-sm font-medium"
+            data-testid={`text-product-price-${product.id}`}
+          >
+            ₦{product.price.toLocaleString()}
+          </div>
+          <div className="text-xs text-muted-foreground">
+            {product.colors.slice(0, 2).join(' • ')}
+          </div>
         </div>
-      )}
 
-      {product.sizes && product.sizes.length > 0 && (
-        <div className="flex gap-2 mb-4">
-          {product.sizes.map((size, idx) => (
-            <Badge
-              key={idx}
-              variant="secondary"
-              className="text-xs"
-              data-testid={`size-${product.id}-${idx}`}
-            >
-              {size}
-            </Badge>
-          ))}
+        <div className="mt-3 text-xs text-muted-foreground">
+          Sizes: {product.sizes.length ? product.sizes.join(', ') : 'One size'}
         </div>
-      )}
 
-      <Button
-        className="w-full bg-green-600 hover:bg-green-700 text-white"
-        onClick={handleWhatsAppOrder}
-        disabled={product.stock === 'out-of-stock'}
-        data-testid={`button-order-${product.id}`}
-      >
-        Order on WhatsApp
-      </Button>
-    </motion.div>
+        <div className="mt-3 flex items-center gap-2">
+          <button
+            onClick={handleWhatsAppOrder}
+            className="flex-1 text-xs px-3 py-2 rounded-full border-2 border-primary/20 bg-primary/10 text-primary font-medium hover-elevate"
+            data-testid={`button-order-${product.id}`}
+          >
+            Order on WhatsApp
+          </button>
+          <button
+            onClick={handleSave}
+            className={`w-9 h-9 rounded-full border-2 border-border flex items-center justify-center transition-colors hover-elevate ${
+              isSaved ? 'text-primary' : 'text-muted-foreground'
+            }`}
+            aria-label="Save item"
+            data-testid={`button-save-${product.id}`}
+          >
+            <Heart className="w-4 h-4" fill={isSaved ? 'currentColor' : 'none'} />
+          </button>
+        </div>
+      </div>
+    </motion.article>
   );
 }

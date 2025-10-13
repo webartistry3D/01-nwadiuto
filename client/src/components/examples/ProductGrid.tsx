@@ -1,39 +1,33 @@
 import ProductGrid from '../ProductGrid';
-import lipstick1 from '@assets/stock_images/pink_lipstick_beauty_f9a0f605.jpg';
-import lipstick2 from '@assets/stock_images/pink_lipstick_beauty_3a790ece.jpg';
-import eyeshadow1 from '@assets/stock_images/eyeshadow_palette_ma_c39bcbad.jpg';
 
 export default function ProductGridExample() {
   const products = [
     {
       id: '1',
-      name: 'Rose Velvet Lipstick',
-      price: 8500,
-      image: lipstick1,
-      category: 'Lipsticks',
+      name: 'Silk Bodycon Dress',
+      price: 32000,
+      image: 'https://images.unsplash.com/photo-1520975910581-3c8f1b5d0f7a?auto=format&fit=crop&w=800&q=60',
+      category: 'Party',
       stock: 'in-stock' as const,
-      colors: ['#FF69B4', '#DC143C'],
+      stockCount: '5',
+      colors: ['Black', 'Champagne'],
+      sizes: ['S', 'M', 'L'],
     },
     {
       id: '2',
-      name: 'Coral Dream Lipstick',
-      price: 7500,
-      image: lipstick2,
-      category: 'Lipsticks',
+      name: 'Designer Two-Piece Set',
+      price: 22000,
+      image: 'https://images.unsplash.com/photo-1520975910581-5f3a6f9c9a2b?auto=format&fit=crop&w=800&q=60',
+      category: 'Workwear',
       stock: 'low-stock' as const,
-    },
-    {
-      id: '3',
-      name: 'Sunset Glow Palette',
-      price: 15000,
-      image: eyeshadow1,
-      category: 'Eyeshadows',
-      stock: 'in-stock' as const,
+      stockCount: '2',
+      colors: ['Rose Gold', 'Ivory'],
+      sizes: ['S', 'M', 'L', 'XL'],
     },
   ];
 
   return (
-    <div className="p-4">
+    <div className="grid grid-cols-2 gap-3 p-4">
       <ProductGrid products={products} />
     </div>
   );
