@@ -39,10 +39,10 @@ export default function Home() {
             <motion.h2
               initial={{ opacity: 0, y: 8 }}
               animate={{ opacity: 1, y: 0 }}
-              className="text-xl font-serif mb-4"
+              className="text-xl font-Poppins font-bold mb-4"
               data-testid="text-products-heading"
             >
-              Featured Pieces
+              Featured Wears
             </motion.h2>
 
             <div className="grid grid-cols-2 gap-3 sm:grid-cols-2 md:grid-cols-3">

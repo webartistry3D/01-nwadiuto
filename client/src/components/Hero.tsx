@@ -8,34 +8,48 @@ export default function Hero() {
   };
 
   return (
-    <section className="relative overflow-hidden">
+    <section className="relative w-full overflow-hidden">
+      {/* Hero container */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8 }}
-        className="h-[56vh] md:h-[80vh] flex items-center"
+        className="relative w-full flex items-center h-[56vh] md:h-[80vh]"
+        style={{ backgroundColor: '#f7b5c5ff' }} // Background fallback behind image
       >
-        <div className="absolute inset-0 bg-black/40" />
+        {/* Overlay for readability */}
+        <div className="absolute inset-0 bg-black/40 z-10" />
+
+        {/* Hero image */}
         <img
-          src="https://images.unsplash.com/photo-1520975910581-3c8f1b5d0f7a?auto=format&fit=crop&w=1600&q=60"
-          alt="hero"
-          className="w-full h-full object-cover"
-        />
-        <div className="relative max-w-3xl mx-auto px-6 text-center text-white">
-          <motion.h1
+  src="/images/hero.png"
+  alt="hero"
+  className="
+    absolute inset-0 w-full h-full
+    object-cover
+    md:object-contain
+    md:h-screen
+  "
+/>
+
+
+        {/* Hero content */}
+        <div className="relative z-20 max-w-3xl px-6 mx-auto text-center text-white">
+          {/*<motion.h1
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.2 }}
-            className="text-3xl md:text-5xl font-serif font-semibold"
+            className="text-3xl sm:text-4xl md:text-5xl font-serif font-semibold"
             data-testid="text-hero-title"
           >
             Glam by Amaka
-          </motion.h1>
+          </motion.h1>*/}
+
           <motion.p
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.35 }}
-            className="mt-3 text-sm md:text-lg"
+            className="mt-3 text-sm sm:text-base md:text-lg"
             data-testid="text-hero-subtitle"
           >
             Luxury. Confidence. Glam.
@@ -53,7 +67,7 @@ export default function Hero() {
               className="mt-6 bg-white text-primary border-primary/20 hover:bg-white/90"
               data-testid="button-shop-collection"
             >
-              Shop the Collection
+              Shop Our Collection
             </Button>
           </motion.div>
         </div>

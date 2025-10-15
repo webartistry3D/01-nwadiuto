@@ -20,7 +20,7 @@ export default function Testimonials() {
         <motion.h3
           initial={{ opacity: 0, y: 8 }}
           animate={{ opacity: 1, y: 0 }}
-          className="font-serif text-lg mb-4"
+          className="font-Poppins text-2xl font-bold mb-4"
           data-testid="text-testimonials-heading"
         >
           What Customers Say

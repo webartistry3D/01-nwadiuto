@@ -5,8 +5,8 @@ interface CategoriesProps {
   onSelectCategory: (category: string) => void;
 }
 
-const categories = ['All', 'Party', 'Workwear', 'Casual', 'Native', 'Bridal', 'Luxury', 'Accessories'];
-
+//const categories = ['All', 'Workwear', 'Party', 'Casual', 'Native', 'Bridal', 'Luxury', 'Dinner', 'Accessories'];
+const categories = ['All', 'Workwear', 'Casual', 'Dinner', 'Luxury'];
 export default function Categories({ selectedCategory, onSelectCategory }: CategoriesProps) {
   return (
     <motion.div

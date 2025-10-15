@@ -1,16 +1,23 @@
 import { motion } from 'framer-motion';
 
-const features = [
+/*const features = [
   { title: 'Premium Quality', subtitle: 'Handpicked fabrics' },
   { title: 'Exclusive Drops', subtitle: 'Limited runs' },
   { title: 'Fast Delivery', subtitle: 'Lagos same-day' },
   { title: 'Personal Styling', subtitle: 'Chat for suggestions' },
+];*/
+
+const features = [
+  { title: 'Premium Quality', subtitle: 'Tailored-ready perfection' },
+  { title: 'Exclusive Collections', subtitle: 'Limited edition pieces' },
+  { title: 'Instant Elegance', subtitle: 'Ready-to-wear, no waiting' },
+  { title: 'VIP Styling Support', subtitle: 'Personal style guidance' },
 ];
 
 export default function WhyShop() {
   return (
     <section className="mt-8 px-4">
-      <div className="max-w-3xl mx-auto bg-card border border-card-border rounded-lg p-4 shadow-sm">
+      <div className="w-full mx-auto bg-card border border-card-border rounded-lg p-4 shadow-sm">
         <motion.div
           className="grid grid-cols-2 gap-4 md:grid-cols-4"
           initial={{ opacity: 0 }}
