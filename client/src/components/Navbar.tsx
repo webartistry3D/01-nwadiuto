@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Menu } from 'lucide-react';
 import { AnimatePresence, motion } from 'framer-motion';
 
-const whatsappNumber = '2348176333444';
+const whatsappNumber = '+2348176333444';
 
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
