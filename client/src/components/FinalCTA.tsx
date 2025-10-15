@@ -1,5 +1,8 @@
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
+import { Instagram, MessageCircle} from 'lucide-react'; // ✅ import icons
+import { SiTiktok, SiX } from 'react-icons/si'; 
+
 
 export default function FinalCTA() {
 
@@ -22,6 +25,7 @@ export default function FinalCTA() {
         >
           Ready to Slay?
         </motion.h4>
+
         <Button
           onClick={scrollToShop}
           className="bg-primary/20 text-primary hover:bg-primary/30 border-primary/20"
@@ -29,6 +33,42 @@ export default function FinalCTA() {
         >
           Shop Now
         </Button>
+
+        {/* ✅ Social Media Icons */}
+        <div className="mt-5 flex justify-center gap-6">
+          <a
+            href="https://www.instagram.com/thestyleplug_ng"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-primary transition-transform hover:scale-110"
+          >
+            <Instagram className="w-12 h-12" />
+          </a>
+          <a
+            href="https://wa.me/2348176333444"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-primary transition-transform hover:scale-110"
+          >
+            <MessageCircle className="w-12 h-12" />
+          </a>
+          <a
+            href="https://www.tiktok.com/@thestyleplug_ng"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-primary transition-transform hover:scale-110"
+          >
+            <SiTiktok  className="w-12 h-12" />
+          </a>
+          <a
+            href="https://twitter.com/thestyleplug_ng"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-primary transition-transform hover:scale-110"
+          >
+            <SiX className="w-12 h-12" />
+          </a>
+        </div>
       </div>
     </section>
   );

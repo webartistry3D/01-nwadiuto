@@ -23,7 +23,7 @@ export default function Testimonials() {
           className="font-Poppins text-2xl font-bold mb-4"
           data-testid="text-testimonials-heading"
         >
-          What Customers Say
+          What Customers Are Saying
         </motion.h3>
         <div className="space-y-3">
           {testimonials.map((testimonial, index) => (
