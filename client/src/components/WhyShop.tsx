@@ -8,10 +8,10 @@ import { motion } from 'framer-motion';
 ];*/
 
 const features = [
-  { title: 'Premium Quality', subtitle: 'Tailored-ready perfection' },
-  { title: 'Exclusive Collections', subtitle: 'Limited edition pieces' },
+  { title: 'Premium Quality', subtitle: 'Tailored to perfection' },
+  { title: 'Exclusive Pieces', subtitle: 'Limited edition pieces' },
   { title: 'Instant Elegance', subtitle: 'Ready-to-wear, no waiting' },
-  { title: 'VIP Styling Support', subtitle: 'Personal style guidance' },
+  { title: 'VIP Styling', subtitle: 'Personal style guidance' },
 ];
 
 export default function WhyShop() {
