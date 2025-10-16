@@ -45,7 +45,7 @@ export default function FinalCTA() {
             <Instagram className="w-12 h-12" />
           </a>
           <a
-            href="https://wa.me/+2348176333444"
+            href="https://wa.me/+234017188070"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-primary transition-transform hover:scale-110"
