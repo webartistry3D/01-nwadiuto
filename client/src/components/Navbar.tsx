@@ -33,12 +33,12 @@ export default function Navbar() {
               <Menu className="w-5 h-5" />
             </button>
 
-            {/*<img
+            <img
               src="/images/logo.jpg"
               alt="Logo"
-              className="w-12 h-12 object-contain"
-            />*/}
-            <div className="text-2xl font-Poppins font-semibold tracking-wider">NWÁDÌÙTÓ 👗🧥🛒🛍️</div>
+              className="w-18 h-12 object-contain"
+            />
+            {/*<div className="text-2xl font-Poppins font-semibold tracking-wider">NWÁDÌÙTÓ 👗🧥🛒🛍️</div>*/}
           </div>
 
           <div className="hidden md:flex gap-6 text-sm items-center">

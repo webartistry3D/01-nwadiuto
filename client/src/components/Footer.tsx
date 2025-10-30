@@ -4,7 +4,17 @@ export default function Footer() {
   return (
     <footer className="mt-8 py-6 border-t border-border">
       <div className="max-w-3xl mx-auto px-4 text-center text-sm text-muted-foreground" data-testid="text-copyright">
-        © {currentYear} The Style Plug • Crafted with love
+        <div className="flex justify-center">
+          © {currentYear}
+        </div>
+        <div className="flex justify-center">
+          <img
+            src="/images/logo.jpg"
+            alt="Logo"
+            className="w-18 h-12"
+          />
+        </div>
+        
       </div>
     </footer>
   );
