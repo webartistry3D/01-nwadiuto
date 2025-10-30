@@ -11,7 +11,7 @@ export default function AboutUs() {
           className="text-2xl font-Poppins font-bold mb-4"
           data-testid="text-about-heading"
         >
-          About Nwádìùtó Studio
+          About Us
         </motion.h2>
 
         <motion.div
@@ -31,20 +31,20 @@ export default function AboutUs() {
 
           <div className="p-6 space-y-4">
             <p className="text-sm md:text-base leading-relaxed">
-              Welcome to <strong>Nwádìùtó Studio</strong>, your destination for luxury fashion that celebrates confidence, elegance, and individuality. We curate exclusive collections of premium clothing designed to make you stand out at every occasion.
+              <strong>Nwádìùtó Studio</strong> is your destination for luxury fashion that celebrates confidence, elegance, and individuality. We curate exclusive collections of premium clothing designed to make you stand out at every occasion.
             </p>
 
             <p className="text-sm md:text-base leading-relaxed">
-              From stunning party dresses and sophisticated workwear to casual outfits, each item in our collection is handpicked with attention to detail and quality. We believe every woman deserves to feel glamorous and empowered in what she wears.
+              From stunning party dresses and sophisticated  casual outfits, each item in our collection is handpicked with attention to detail and quality. We believe every woman deserves to feel glamorous and empowered in what she wears.
             </p>
 
             <p className="text-sm md:text-base leading-relaxed">
-              Based in Lagos, we offer same-day delivery and personalized styling assistance to ensure you find the perfect piece for your unique style. Our limited-run collections mean you will ll always wear something special and exclusive.
+              We offer same-day delivery and personalized styling assistance to ensure you find the perfect piece for your unique style. Our limited-run collections mean you will always wear something special and exclusive.
             </p>
 
             <div className="pt-2">
               <p className="text-sm font-medium text-primary">
-                Let's help you discover your glam. Shop with us today!
+                Shop with us. Let's join you in discovering your glam.
               </p>
             </div>
           </div>

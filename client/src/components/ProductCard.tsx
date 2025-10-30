@@ -29,8 +29,8 @@ export default function ProductCard({ product, index }: ProductCardProps) {
 
   const handleWhatsAppOrder = () => {
     const sizePart = product.sizes.length > 0 ? ` Size: ${product.sizes[0]}` : '';
-    const message = `Hi Style Plug, I'm interested in the ${product.name} (Price: ₦${product.price.toLocaleString()}).`;
-    //const message = `Hi Style Plug, I'm interested in the ${product.name} (Price: ₦${product.price.toLocaleString()}) in color ${selectedColor}${sizePart}. Do you have it available?`;
+    const message = `Hi, your collection is glam!🤩 I'm interested in the ${product.name} (Price: ₦${product.price.toLocaleString()}).`;
+    //const message = `Hi, your collection looks fabulous. I'm interested in the ${product.name} (Price: ₦${product.price.toLocaleString()}) in color ${selectedColor}${sizePart}. Do you have it available?`;
     const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
   };
