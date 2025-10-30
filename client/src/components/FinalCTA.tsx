@@ -28,7 +28,7 @@ export default function FinalCTA() {
 
         <Button
           onClick={scrollToShop}
-          className="bg-primary/20 text-primary hover:bg-primary/30 border-primary/20"
+          className="bg-white/20 text-primary hover:bg-white/60 border-primary/20"
           data-testid="button-final-cta"
         >
           Shop Now
@@ -37,7 +37,7 @@ export default function FinalCTA() {
         {/* ✅ Social Media Icons */}
         <div className="mt-5 flex justify-center gap-6">
           <a
-            href="https://www.instagram.com/thestyleplug_ng"
+            href="https://www.instagram.com/nwadiuto_studio"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-primary transition-transform hover:scale-110"
@@ -45,7 +45,7 @@ export default function FinalCTA() {
             <Instagram className="w-12 h-12" />
           </a>
           <a
-            href="https://wa.me/+234017188070"
+            href="https://wa.me/+23470188070"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-primary transition-transform hover:scale-110"
@@ -53,7 +53,7 @@ export default function FinalCTA() {
             <MessageCircle className="w-12 h-12" />
           </a>
           <a
-            href="https://www.tiktok.com/@thestyleplug_ng"
+            href="https://tiktok.com/@nwadiuto_studio"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-primary transition-transform hover:scale-110"
@@ -61,7 +61,7 @@ export default function FinalCTA() {
             <SiTiktok  className="w-12 h-12" />
           </a>
           <a
-            href="https://twitter.com/thestyleplug_ng"
+            href="https://twitter.com/nwadiuto_studio"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-primary transition-transform hover:scale-110"

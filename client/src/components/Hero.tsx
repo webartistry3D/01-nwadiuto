@@ -2,9 +2,9 @@ import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 
 export default function Hero() {
-  const scrollToShop = () => {
-    const shopSection = document.getElementById('shop');
-    shopSection?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  const scrollToCategories = () => {
+    const categoriesSection = document.getElementById('category');
+    categoriesSection?.scrollIntoView({ behavior: 'smooth', block: 'start' });
   };
 
   return (
@@ -14,8 +14,8 @@ export default function Hero() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8 }}
-        className="relative w-full flex items-center h-[56vh] md:h-[80vh]"
-        style={{ backgroundColor: '#f7b5c5ff' }} // Background fallback behind image
+        className="relative w-full flex items-center h-[56vh] md:h-[100vh]"
+        style={{ backgroundColor: '#cfd1b9' }} // Background fallback behind image
       >
         {/* Overlay for readability */}
         <div className="absolute inset-0 bg-black/40 z-10" />
@@ -34,7 +34,7 @@ export default function Hero() {
 
 
         {/* Hero content */}
-        <div className="relative z-20 max-w-3xl px-6 mx-auto text-center text-white">
+        {/*<div className="relative z-20 max-w-3xl px-6 mx-auto text-center text-white">
           {/*<motion.h1
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
@@ -43,7 +43,7 @@ export default function Hero() {
             data-testid="text-hero-title"
           >
             Glam by Amaka
-          </motion.h1>*/}
+          </motion.h1>
 
           <motion.p
             initial={{ y: 20, opacity: 0 }}
@@ -61,7 +61,7 @@ export default function Hero() {
             transition={{ delay: 0.5 }}
           >
             <Button
-              onClick={scrollToShop}
+              onClick={scrollToCategories}
               variant="outline"
               size="lg"
               className="mt-6 bg-white text-primary border-primary/20 hover:bg-white/90"
@@ -70,7 +70,7 @@ export default function Hero() {
               Shop Our Collection
             </Button>
           </motion.div>
-        </div>
+        </div>*/}
       </motion.div>
     </section>
   );

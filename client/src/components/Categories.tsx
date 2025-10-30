@@ -15,7 +15,7 @@ export default function Categories({ selectedCategory, onSelectCategory }: Categ
       transition={{ delay: 0.1 }}
       className="max-w-3xl mx-auto"
     >
-      <div className="flex gap-3 overflow-x-auto pb-2 scrollbar-hide">
+      <div id="category" className="flex gap-3 overflow-x-auto pb-2 scrollbar-hide">
         {categories.map((category) => (
           <button
             key={category}

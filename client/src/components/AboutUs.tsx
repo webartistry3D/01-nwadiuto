@@ -11,7 +11,7 @@ export default function AboutUs() {
           className="text-2xl font-Poppins font-bold mb-4"
           data-testid="text-about-heading"
         >
-          About The Style Plug
+          About Nwádìùtó Studio
         </motion.h2>
 
         <motion.div
@@ -31,7 +31,7 @@ export default function AboutUs() {
 
           <div className="p-6 space-y-4">
             <p className="text-sm md:text-base leading-relaxed">
-              Welcome to <strong>The Style Plug</strong>, your destination for luxury fashion that celebrates confidence, elegance, and individuality. We curate exclusive collections of premium clothing designed to make you stand out at every occasion.
+              Welcome to <strong>Nwádìùtó Studio</strong>, your destination for luxury fashion that celebrates confidence, elegance, and individuality. We curate exclusive collections of premium clothing designed to make you stand out at every occasion.
             </p>
 
             <p className="text-sm md:text-base leading-relaxed">

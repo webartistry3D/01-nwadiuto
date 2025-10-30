@@ -33,12 +33,12 @@ export default function Navbar() {
               <Menu className="w-5 h-5" />
             </button>
 
-            <img
+            {/*<img
               src="/images/logo.jpg"
               alt="Logo"
               className="w-12 h-12 object-contain"
-            />
-            <div className="text-2xl font-Poppins font-semibold tracking-wider"><thead></thead>thestyleplug_ng</div>
+            />*/}
+            <div className="text-2xl font-Poppins font-semibold tracking-wider">NWÁDÌÙTÓ 👗🧥🛒🛍️✨</div>
           </div>
 
           <div className="hidden md:flex gap-6 text-sm items-center">
@@ -55,7 +55,7 @@ export default function Navbar() {
 
           <div className="hidden md:flex">
             <a
-              href={`https://wa.me/${whatsappNumber}?text=${encodeURIComponent("Hi Style Plug, your collection is beautiful! I would like to make some inquiries.")}`}
+              href={`https://wa.me/${whatsappNumber}?text=${encodeURIComponent("Hi Nwádìùtó Studio, your collection is beautiful! I would like to make some inquiries.")}`}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block px-3 py-2 rounded-full bg-primary/10 text-primary text-sm border border-primary/20"
@@ -102,7 +102,7 @@ export default function Navbar() {
                   href={`https://wa.me/${whatsappNumber}?text=${encodeURIComponent("Hi Style Plug, your collection is beautiful! I would like to make some inquiries.")}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mt-2 inline-block px-3 py-2 rounded-full bg-rose-100 text-rose-700 text-xl"
+                  className="mt-2 inline-block px-3 py-2 rounded-full bg-gray-300 text-green-900 text-xl"
                 >
                   Chat on WhatsApp
                 </a>
