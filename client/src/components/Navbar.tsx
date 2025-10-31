@@ -55,7 +55,7 @@ export default function Navbar() {
 
           <div className="hidden md:flex">
             <a
-              href={`https://wa.me/${whatsappNumber}?text=${encodeURIComponent("Hi Nwadiuto, I ❤️ your outfits! I would like to make some inquiries.")}`}
+              href={`https://wa.me/${whatsappNumber}?text=${encodeURIComponent("Hi Nwadiuto, ❤️ your outfits!\nI would like to make some inquiries.")}`}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block px-3 py-2 rounded-full bg-primary/10 text-primary text-sm border border-primary/20"
@@ -99,7 +99,7 @@ export default function Navbar() {
                   Contact
                 </a>*/}
                 <a
-                  href={`https://wa.me/${whatsappNumber}?text=${encodeURIComponent("Hi Nwadiuto, I ❤️ your outfits! I would like to make some inquiries.")}`}
+                  href={`https://wa.me/${whatsappNumber}?text=${encodeURIComponent("Hi Nwadiuto, ❤️ your outfits! \nI would like to make some inquiries.")}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="mt-2 inline-block px-3 py-2 rounded-full bg-gray-300 text-green-900 text-xl"
