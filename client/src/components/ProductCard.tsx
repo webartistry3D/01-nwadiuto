@@ -20,7 +20,7 @@ interface ProductCardProps {
   index: number;
 }
 
-const whatsappNumber = '+2347017188070';
+const whatsappNumber = '+2347016361745';
 
 export default function ProductCard({ product, index }: ProductCardProps) {
   const [isSaved, setIsSaved] = useState(false);
