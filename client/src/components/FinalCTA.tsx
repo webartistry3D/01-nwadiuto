@@ -53,7 +53,7 @@ export default function FinalCTA() {
             <MessageCircle className="w-12 h-12" />
           </a>
           <a
-            href="https://www.tiktok.com/@nwadiuto_studio"
+            href="https://vm.tiktok.com/ZSHcFNyR9x4L6-d7gKS/"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-primary transition-transform hover:scale-110"
