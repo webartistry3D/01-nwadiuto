@@ -28,7 +28,7 @@ export default function FinalCTA() {
 
         <Button
           onClick={scrollToShop}
-          className="bg-white/20 text-primary hover:bg-white/60 border-primary/20"
+          className="bg-white/20 text-background hover:bg-white/60 border-primary/20"
           data-testid="button-final-cta"
         >
           Shop Now
