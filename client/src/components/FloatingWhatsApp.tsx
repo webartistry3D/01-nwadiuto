@@ -1,11 +1,11 @@
 import { MessageCircle } from 'lucide-react';
 import { motion } from 'framer-motion';
 
-const whatsappNumber = '+2347017188070';
+const whatsappNumber = '+2347016361745';
 
 export default function FloatingWhatsApp() {
   const handleClick = () => {
-    const message = "Hi Style Plug, your collection is beautiful. I want to make an inquiry.";
+    const message = "Hi Nwadiuto, ❤️ your outfits! /nI would like to make some inquiries.";
     const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
   };
