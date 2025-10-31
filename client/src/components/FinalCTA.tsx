@@ -45,7 +45,7 @@ export default function FinalCTA() {
             <Instagram className="w-12 h-12" />
           </a>
           <a
-            href="https://wa.me/+23470188070"
+            href="+2347016361745"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-primary transition-transform hover:scale-110"
@@ -61,7 +61,7 @@ export default function FinalCTA() {
             <SiTiktok  className="w-12 h-12" />
           </a>
           <a
-            href="https://twitter.com/nwadiuto_studio"
+            href="https://www.twitter.com/nwadiuto_studio"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-primary transition-transform hover:scale-110"
