@@ -44,8 +44,7 @@ export default function FinalCTA() {
           >
             <Instagram className="w-12 h-12" />
           </a>
-          <a
-            href={`https://wa.me/${whatsappNumber}?text=${encodeURIComponent("Hi Nwadiuto, ❤️ your outfits! \nI would like to make some inquiries.")}`}"
+          <a href="https://wa.me/+234701 6361745"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-primary transition-transform hover:scale-110"
