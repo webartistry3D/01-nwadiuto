@@ -44,13 +44,17 @@ export default function FinalCTA() {
           >
             <Instagram className="w-12 h-12" />
           </a>
-          <a href="https://wa.me/+234701 6361745"
+          <a
+            href={`https://wa.me/2347016361745?text=${encodeURIComponent(
+              "Hi Nwadiuto, ❤️ your outfits! /nI would like to make some inquiries."
+            )}`}
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-primary transition-transform hover:scale-110"
           >
             <MessageCircle className="w-12 h-12" />
           </a>
+
           <a
             href="https://www.tiktok.com/@nwadiuto_studio/"
             target="_blank"
